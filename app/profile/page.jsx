@@ -12,7 +12,7 @@ const MyProfile = () => {
 
   useEffect(() => {
     const fetchPrompts = async () => {
-      const response = await fetch(`api/users/${session?.user.id}/prompts`);
+      const response = await fetch(`/api/users/${session?.user.id}/prompts`);
       const data = await response.json();
       setPrompts(data);
     };
@@ -45,7 +45,7 @@ const MyProfile = () => {
   return (
     <Profile
       name="My"
-      desc="Welcome to your personalized profile page"
+      desc="Welcome to your personalized profile page. Share your exceptional prompts and inspire others with the power of your imagination."
       data={prompts}
       handleEdit={handleEdit}
       handleDelete={handleDelete}
