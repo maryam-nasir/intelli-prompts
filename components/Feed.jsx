@@ -5,23 +5,42 @@ import PromptCardList from "./PromptCardList";
 
 const Feed = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchTimeout, setSearchTimeout] = useState(null);
   const [prompts, setPrompts] = useState([]);
+  const [searchedPrompts, setSearchedPrompts] = useState([]);
 
   useEffect(() => {
     const fetchPrompts = async () => {
       const response = await fetch("/api/prompt");
       const resData = await response.json();
       setPrompts(resData);
+      setSearchedPrompts(resData);
     };
     fetchPrompts();
   }, []);
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-    event.tatr;
+  const filterPrompts = (searchText) => {
+    const regex = new RegExp(searchText, "i");
+    const filteredPrompts = prompts.filter((prompt) => {
+      return regex.test(prompt.tag) || regex.test(prompt.prompt) || regex.test(prompt.creator.username);
+    })
+    setSearchedPrompts(filteredPrompts);
   };
 
-  const handleTagClick = () => {};
+  const handleSearchChange = (event) => {
+    clearTimeout(searchTimeout);
+    setSearchTerm(event.target.value);
+
+    const timeout = setTimeout(() => {
+      filterPrompts(event.target.value);
+    }, 500);
+    setSearchTimeout(timeout);
+  };
+
+  const handleTagClick = (tag) => {
+    setSearchTerm(tag);
+    filterPrompts(tag);
+  };
 
   return (
     <section className="feed">
@@ -36,7 +55,7 @@ const Feed = () => {
         />
       </form>
 
-      <PromptCardList data={prompts} handleTagClick={handleTagClick} />
+      <PromptCardList data={searchedPrompts} handleTagClick={handleTagClick} />
     </section>
   );
 };
