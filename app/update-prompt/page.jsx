@@ -5,14 +5,14 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Form from "@components/Form";
 
 const UpdatePrompt = () => {
-  // const router = useRouter();
-  // const searchParams = useSearchParams();
-  // const promptId = searchParams.get("id");
-  // const [submitting, setSubmitting] = useState(false);
-  // const [post, setPost] = useState({
-  //   prompt: "",
-  //   tag: "",
-  // });
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const promptId = searchParams.get("id");
+  const [submitting, setSubmitting] = useState(false);
+  const [post, setPost] = useState({
+    prompt: "",
+    tag: "",
+  });
 
   // useEffect(() => {
   //   const getPromptDetails = async () => {
@@ -29,8 +29,8 @@ const UpdatePrompt = () => {
   //   }
   // }, [promptId]);
 
-  // const updatePrompt = async (event) => {
-  //   event.preventDefault();
+  const updatePrompt = async (event) => {
+    event.preventDefault();
   //   setSubmitting(true);
 
   //   if (!promptId) {
@@ -54,17 +54,16 @@ const UpdatePrompt = () => {
   //   } finally {
   //     setSubmitting(false);
   //   }
-  // };
+  };
 
   return (
-    <div>Update Prompt</div>
-    // <Form
-    //   type="Edit"
-    //   post={post}
-    //   setPost={setPost}
-    //   submitting={submitting}
-    //   handleSubmit={updatePrompt}
-    // />
+    <Form
+      type="Edit"
+      post={post}
+      setPost={setPost}
+      submitting={submitting}
+      handleSubmit={updatePrompt}
+    />
   );
 };
 
