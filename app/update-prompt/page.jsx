@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Form from "@components/Form";
 
-const UpdatePrompt = () => {
+const UpdatePrompt = ({params}) => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
@@ -24,9 +24,9 @@ const UpdatePrompt = () => {
       });
     };
 
-    // if (promptId) {
+    if (promptId) {
       getPromptDetails();
-    // }
+    }
   }, [promptId]);
 
   const updatePrompt = async (event) => {
