@@ -7,7 +7,7 @@ import Form from "@components/Form";
 const UpdatePrompt = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const promptId = searchParams.get("id") || null;
+  const promptId = searchParams.get("id");
   const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState({
     prompt: "",
@@ -27,7 +27,7 @@ const UpdatePrompt = () => {
     if (promptId) {
       getPromptDetails();
     }
-  }, [promptId]);
+  }, []);
 
   const updatePrompt = async (event) => {
     event.preventDefault();
