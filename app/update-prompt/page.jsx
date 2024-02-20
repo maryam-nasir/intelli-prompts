@@ -8,7 +8,7 @@ const UpdatePromptPage = () => {
  
   return (
     <Suspense fallback={<><p>Loading...</p></>}>
-    <UpdatePrompt />
+      <UpdatePrompt />
     </Suspense>
   );
 };
@@ -39,7 +39,7 @@ const UpdatePrompt = () => {
     if (promptId) {
       getPromptDetails();
     }
-  }, []);
+  }, [promptId]);
 
   const updatePrompt = async (event) => {
     event.preventDefault();
