@@ -28,7 +28,7 @@ IntelliPrompts is a personal project built using Next.js which allows users to d
 
 Follow these steps to set up the project locally on your machine.
 
-**Prerequisites**
+**Prerequisites**<br />
 Make sure you have the following installed on your machine:
 
 - [Node.js](https://nodejs.org/en)
@@ -39,14 +39,14 @@ git clone https://github.com/maryam-nasir/intelli-prompts.git
 cd intelli-prompts
 ```
 
-**Installation**
+**Installation**<br />
 Install the project dependencies using npm:
 
 ```
 npm install
 ```
 
-**Set Up Environment Variables**
+**Set Up Environment Variables**<br />
 Create a `.env` file at the root of the project and copy the following content:
 
 ```
@@ -60,7 +60,7 @@ MONGODB_URI=
 
 Replace the placeholder values with your actual credentials. You can get these credentials by signing up on these corresponding websites from [Google Cloud Console](https://console.cloud.google.com) for GOOGLE_ID and GOOGLE_CLIENT_SECRET, [Cryptpool](https://www.cryptool.org/en/cto/openssl) for NEXTAUTH_SECRET, and [MongoDB](https://www.mongodb.com/) for MONGODB_URI. 
 
-**Running the Project**
+**Running the Project**<br />
 Run:
 ```
 npm run dev
