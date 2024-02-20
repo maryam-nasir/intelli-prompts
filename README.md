@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# IntelliPrompts
+
+IntelliPrompts is a personal project built using Next.js which allows users to discover AI prompts shared by the community and to create their own prompts to share with the world and to save for later use. Access [here](https://intelli-prompts-df4d1r1lh-maryam-nasirs-projects.vercel.app/).
+
+
+## Tech Stack:
+- Next.js
+- Tailwind CSS
+- MongoDB
+
+
+## Main Features:
+
+- **Discover AI Prompts**: Users can view the prompts created by others on the main page.
+
+- **Create, Update and Delete Prompts**: Authenticated users can create their own prompts, edit them and delete them as well.
+
+- **View Profile**: Each user has their own profile which they can access by clicking on the user icon at the bottom right of the page. They can also view the profile of other users by clicking them on their avatars.
+
+- **Search Prompts**: Prompts can be searched by tags, username or even a portion of the prompt.
+
+- **Copy to Clipboard**: A handy "Copy to Clipboard" functionality is available to allow users to copy their favorite prompts and paste right into the AI tool.
+
+- **Google Authentication**: Google authentication using Next-Auth is implemented, ensuring a trustworthy and seamless login experience.
+
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up the project locally on your machine.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**Prerequisites**
+Make sure you have the following installed on your machine:
+
+- [Node.js](https://nodejs.org/en)
+
+**Clone the Repository**
+```
+git clone https://github.com/maryam-nasir/intelli-prompts.git
+cd intelli-prompts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Installation**
+Install the project dependencies using npm:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Set Up Environment Variables**
+Create a `.env` file at the root of the project and copy the following content:
 
-## Learn More
+```
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_URL_INTERNAL=http://localhost:3000
+NEXTAUTH_SECRET=
+GOOGLE_ID=
+GOOGLE_CLIENT_SECRET=
+MONGODB_URI=
+```
 
-To learn more about Next.js, take a look at the following resources:
+Replace the placeholder values with your actual credentials. You can get these credentials by signing up on these corresponding websites from [Google Cloud Console](https://console.cloud.google.com) for GOOGLE_ID and GOOGLE_CLIENT_SECRET, [Cryptpool](https://www.cryptool.org/en/cto/openssl) for NEXTAUTH_SECRET, and [MongoDB](https://www.mongodb.com/) for MONGODB_URI. 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Running the Project**
+Run:
+```
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000) in the browser to view the project.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Access the Deployed version on Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The app is deployed on Vercel and can be accessed here: [IntelliPrompts](https://intelli-prompts-df4d1r1lh-maryam-nasirs-projects.vercel.app/).
